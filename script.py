@@ -2,9 +2,9 @@ import sys
 from skimage import io
 from sklearn.cluster import KMeans
 import numpy as np
+from flask import Flask, flash, redirect, render_template, request, session, abort, send_from_directory
 
 # reading filename
-
 filename = sys.argv[1]
 
 # reading the image
