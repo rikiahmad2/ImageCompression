@@ -64,9 +64,10 @@ def index():
                         # assinging every pixel the rgb color of their label's center
                         newImage[i, j, :] = centers[labels[i, j], :]
             io.imsave(filenamex.split('.')[0] + '-compressed.png', newImage)
+            data = request.form['namaFile']
 
             print('Image has been compressed sucessfully.')
-            return redirect(url_for('index', filename=filename))
+            return render_template('compress.html', foto = data );
     else:
         return render_template('index.html')
 
